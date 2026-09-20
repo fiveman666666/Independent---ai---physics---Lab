@@ -212,3 +212,129 @@ The next stage is to determine:
 * and whether the apparent improvement survives independent statistical cross-checking.
 
 The current results should therefore be regarded as **first empirical measurements of the model's behaviour, not as confirmation of the model**.
+
+# Formal Calculation Procedure
+
+## 1. Purpose
+
+This section defines the calculation procedure used to test the proposed relation against galaxy rotation-curve data.
+
+The tested relation is:
+
+**a_model = a_N + p × sqrt(a_N × a_0)**
+
+The parameter p is estimated from the observational data.
+
+## 2. Baryonic Contribution
+
+For every radial measurement point, the baryonic velocity contribution is calculated from the available gas, disk, and bulge components:
+
+**V_bar² = V_gas × |V_gas| + V_disk² + V_bulge²**
+
+The signed gas term is retained because negative gas contributions may occur in the source rotation-curve decomposition.
+
+Only measurement points satisfying:
+
+**V_bar² > 0**
+
+are used for the acceleration fit.
+
+## 3. Unit Conversion
+
+The radius is converted from kiloparsecs to metres:
+
+**r = R_kpc × 3.085677581 × 10¹⁹ m**
+
+Velocities are converted from kilometres per second to metres per second:
+
+**V = V_km/s × 1000**
+
+## 4. Observed Acceleration
+
+For each measurement point, the observed centripetal acceleration is:
+
+**a_obs = V_obs² / r**
+
+## 5. Newtonian Baryonic Acceleration
+
+The Newtonian acceleration inferred from the baryonic rotation contribution is:
+
+**a_N = V_bar² / r**
+
+after converting the velocity contribution to SI units.
+
+Equivalently:
+
+**a_N = (V_bar² × 10⁶) / r**
+
+when V_bar² is expressed in (km/s)².
+
+## 6. Model Contribution
+
+Define:
+
+**X = sqrt(a_N × a_0)**
+
+and:
+
+**Y = a_obs - a_N**
+
+The tested model then becomes:
+
+**Y = p × X**
+
+This converts the parameter estimation into a one-parameter regression through the origin.
+
+## 7. Unweighted Estimate of p
+
+For an unweighted least-squares acceleration fit, p is determined by minimizing:
+
+**Σ(Y_i - p × X_i)²**
+
+The analytical solution is:
+
+**p = Σ(X_i × Y_i) / Σ(X_i²)**
+
+The summation runs over all accepted measurement points.
+
+## 8. Error-Weighted Estimate
+
+When observational uncertainties are included, each point receives a weight:
+
+**w_i = 1 / σ_i²**
+
+The weighted estimate becomes:
+
+**p = Σ(w_i × X_i × Y_i) / Σ(w_i × X_i²)**
+
+The exact definition and propagation of σ must be stated explicitly for reproducibility.
+
+## 9. Velocity-Space Fit
+
+The model acceleration can also be converted back into a predicted rotational velocity:
+
+**V_model² = a_model × r**
+
+therefore:
+
+**V_model = sqrt(a_model × r)**
+
+or:
+
+**V_model = sqrt[(a_N + p × sqrt(a_N × a_0)) × r]**
+
+The velocity-fit value of p is obtained by minimizing the residuals between:
+
+**V_obs**
+
+and
+
+**V_model(p)**
+
+over the accepted measurement points.
+
+## 10. Reproducibility Rule
+
+The value of p must be estimated independently for each defined fitting procedure.
+
+Different fitting procedures must not be combined or sel
