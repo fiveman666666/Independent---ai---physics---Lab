@@ -147,3 +147,68 @@ These consequences provide direct targets for comparison with observational gala
 The parameter p must be estimated from the data rather than assumed. The stability of p across different galaxies constitutes an additional empirical test of the model.
 
 Agreement with these mathematical consequences alone does not establish the physical origin of the relation; it provides predictions that can be tested against observational data.
+
+# Data and First Results
+
+## Dataset
+
+The first empirical test uses galaxy rotation-curve data from the SPARC dataset.
+
+The working dataset contained:
+
+**Total measurement points: 3,391**
+
+Two data points were excluded because the calculated baryonic squared velocity contribution became negative:
+
+* UGC01281, R = 0.08 kpc
+* UGC01281, R = 0.23 kpc
+
+This leaves:
+
+**Measurement points used: 3,389**
+
+No fitted value of p was inserted into the dataset before the analysis.
+
+## Tested Relation
+
+The tested acceleration relation is:
+
+**a_tot = a_N + p × sqrt(a_N × a_0)**
+
+The purpose of the first test was to estimate the dimensionless parameter p from the observational data using different fitting approaches.
+
+## First Results
+
+Three fitting approaches produced the following global estimates:
+
+**Unweighted acceleration fit: p = 0.609**
+
+**Error-weighted acceleration fit: p = 0.714**
+
+**Velocity fit: p = 0.775**
+
+The fact that the estimated value of p changes with the fitting method is important and must not be hidden.
+
+At this stage, the results do not establish that p is a universal constant.
+
+Instead, they provide a quantitative starting point for further tests.
+
+## Single-Galaxy Check
+
+NGC 3198 was also examined separately as an earlier test case using its full 43-point rotation curve.
+
+The analysis indicated that the additional square-root term can improve the description relative to the purely baryonic prediction.
+
+However, a successful fit to an individual galaxy is not sufficient evidence for a universal relation.
+
+## Next Tests
+
+The next stage is to determine:
+
+* how strongly p varies from galaxy to galaxy,
+* whether the variation can be explained by observational uncertainties,
+* whether one global p can describe multiple galaxies adequately,
+* how the model compares with appropriate alternative relations,
+* and whether the apparent improvement survives independent statistical cross-checking.
+
+The current results should therefore be regarded as **first empirical measurements of the model's behaviour, not as confirmation of the model**.
